@@ -1,0 +1,19 @@
+services:
+  nextjs-dev:
+    build:
+      context: ../../
+      dockerfile: docker/development/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../../:/app
+      - /app/node_modules
+      - /app/.next
+    env_file:
+      - ../../.env
+
+    environment:
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
+    
+    command: npm run dev

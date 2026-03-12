@@ -1,0 +1,18 @@
+# Dependencies
+node_modules
+
+docker
+
+# IDE
+.idea
+.vscode
+
+# Next.js build output
+.next
+
+# git
+.git
+.gitignore
+
+# Environment files (use Docker secrets instead)
+.env
