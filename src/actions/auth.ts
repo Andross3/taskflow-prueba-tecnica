@@ -30,7 +30,7 @@ export async function login(formData: FormData) {
     }
 
     revalidatePath('/', 'layout')
-    redirect('/jhazmin')
+    redirect('/')
 }
 
 export async function signup(formData: FormData) {
