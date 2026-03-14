@@ -18,4 +18,17 @@ model profiles{
   name String @db.VarChar(100)
   createdAt DateTime @default(now())  
   updatedAt DateTime @updatedAt
+
+  projects projects[]
+}
+model projects{
+  id String @id @default(uuid())
+  title String @db.VarChar(100)
+  description String @db.Text
+  color String @db.VarChar(7)
+  createdAt DateTime @default(now())  
+  updatedAt DateTime @updatedAt
+
+  userId String
+  user profiles @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
