@@ -1,15 +1,15 @@
-import ButtonProject from "@/components/buttonNewProject";
+import CreateFormProject from "@/components/createProjectoForm";
 
 const page = () => {
     return (
-        <div className="flex justify-between items-center px-6">
+        <div className="flex flex-col">
             <div className="flex flex-col ">
                 <h1 className="text-4xl">Proyectos</h1>
                 <h2 className="text-2xl">0 proyectos</h2>
             </div>
             
             <div>
-                <ButtonProject />
+                <CreateFormProject />
             </div>
         </div>
     )
