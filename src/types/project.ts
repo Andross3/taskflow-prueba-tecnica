@@ -6,3 +6,13 @@ export interface CreateProjects{
         connect: { id: string };
     }
 }
+
+export interface Project {
+    id: string;
+    title: string;
+    description: string;
+    color: string;
+    createdAt: string;
+    updatedAt: string;
+    userId: string;
+}
