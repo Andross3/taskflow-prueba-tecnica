@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { Roboto } from "next/font/google";
+import { Toaster } from "sonner";
 
 const roboto = Roboto({
     weight: ["400", "500", "700"],
@@ -35,6 +36,7 @@ export default function RootLayout({
         className={`${roboto.className} antialiased `}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );
