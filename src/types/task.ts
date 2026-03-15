@@ -10,3 +10,13 @@ export interface Task {
     updatedAt: Date;
     projectId: string;
 }
+
+export interface CreateTask {
+    title: string;
+    description: string;
+    status: Status;
+    priority: Priority;
+    project: {
+        connect: { id: string };
+    };
+}
