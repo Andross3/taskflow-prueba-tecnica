@@ -13,6 +13,8 @@ export async function getTasksByProject(projectId: string) {
     const isOwner = await verifyProjectOwnership(projectId, user.id);
     if (!isOwner) return null;
 
+    if (!projectId) return null;
+
     try {
         const tasks = await prisma.tasks.findMany({
             where: { projectId },
