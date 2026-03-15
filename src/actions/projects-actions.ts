@@ -41,21 +41,17 @@ export const createProject = async (formData: FormData) => {
 export async function getAllProjects() {
 
     const supabase = await createClient();
-    const { data: { user } } = await supabase.auth.getUser();
-    
-    if (!user) {
-        return null;
-    }
-    
-    const { data: projects, error } = await supabase
-        .from('projects')
-        .select('*');
-    
-    if (error) {
-        return null;
-    }
+    const { data: { user }, error } = await supabase.auth.getUser();
 
-    console.log(projects);
-    
-    return projects;
+    if (error || !user) return null;
+
+    try {
+        const projects = await prisma.projects.findMany({
+            where: { userId: user.id }
+        });
+        return projects;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
 }
