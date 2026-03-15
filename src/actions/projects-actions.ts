@@ -37,3 +37,25 @@ export const createProject = async (formData: FormData) => {
         return null;
     }
 }
+
+export async function getAllProjects() {
+
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    
+    if (!user) {
+        return null;
+    }
+    
+    const { data: projects, error } = await supabase
+        .from('projects')
+        .select('*');
+    
+    if (error) {
+        return null;
+    }
+
+    console.log(projects);
+    
+    return projects;
+}
