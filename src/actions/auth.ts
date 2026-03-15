@@ -26,7 +26,7 @@ export async function login(formData: FormData) {
     })
 
     if (error) {
-        redirect('/error')
+        return { message: "Credenciales incorrectas. Intenta de nuevo." }
     }
 
     revalidatePath('/', 'layout')
