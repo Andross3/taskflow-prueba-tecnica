@@ -6,7 +6,7 @@ interface SectionHeaderProps {
     title: string;
     description?: string;
     buttonLabel: string;
-    dialogContent: (onClose: () => void) => ReactNode;
+    dialogContent: ReactNode;
 }
 
 const SectionHeader = ({ title, description, buttonLabel, dialogContent }: SectionHeaderProps) => {
@@ -16,12 +16,8 @@ const SectionHeader = ({ title, description, buttonLabel, dialogContent }: Secti
         <div className="flex items-center justify-between px-1 py-4">
             
             <div className="flex flex-col gap-0.5">
-                <h1 className="text-xl font-semibold text-zinc-800">
-                    {title}
-                </h1>
-                {description && (
-                    <p className="text-sm text-zinc-500">{description}</p>
-                )}
+                <h1 className="text-xl font-semibold text-zinc-800">{title}</h1>
+                {description && <p className="text-sm text-zinc-500">{description}</p>}
             </div>
 
             <button
@@ -34,18 +30,14 @@ const SectionHeader = ({ title, description, buttonLabel, dialogContent }: Secti
                     transition-colors duration-200 cursor-pointer
                 "
             >
-                <svg
-                    className="w-4 h-4"
-                    fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" strokeWidth={2.5}
-                >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
                 </svg>
                 {buttonLabel}
             </button>
 
             <Dialog open={open} onClose={() => setOpen(false)}>
-                {dialogContent(() => setOpen(false))}
+                {dialogContent}
             </Dialog>
         </div>
     );

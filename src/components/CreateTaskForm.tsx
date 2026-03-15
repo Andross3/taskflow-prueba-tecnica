@@ -39,7 +39,7 @@ const CreateFormTask = ({ projectId, onClose }: Props) => {
                     <h2 className="text-lg font-semibold text-zinc-800">
                         Crear nueva tarea
                     </h2>
-                    {onClose && (
+                    {(
                         <button
                             type="button"
                             onClick={onClose}
