@@ -1,5 +1,5 @@
 import ProjectHeader  from "@/components/projectHeader";
-import ContainerProjects from "@/components/containerProjects";
+import ContainerProjects from "@/components/ContainerProjects";
 
 const ProjectsList = () => {
     return (

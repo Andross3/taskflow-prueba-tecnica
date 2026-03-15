@@ -33,11 +33,15 @@ export async function updateSession(request: NextRequest) {
     } = await supabase.auth.getUser();
 
     // rutas protegidas
-    const protectedRoutes = ["/dashboard", "/projects", "/tasks"];
+    const protectedRoutes = ["/projects", "/tasks"];
+    // rutas publicas
+    const publicRoutes = ["/login", "/signup", "/error"];
     // verificar si la ruta actual es una ruta protegida
     const isProtectedRoute = protectedRoutes.some(route => request.nextUrl.pathname.startsWith(route));
-    
-    if (!user && isProtectedRoute) {
+    const isRootRoute = request.nextUrl.pathname === "/";
+    const isPublicRoute = publicRoutes.some(route => request.nextUrl.pathname.startsWith(route));
+
+    if (!user && (isProtectedRoute || isRootRoute) && !isPublicRoute) {
         return NextResponse.redirect(new URL("/login", request.url));
     }
 

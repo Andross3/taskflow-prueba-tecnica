@@ -33,9 +33,9 @@ const SignIn = () => {
                     </div>
 
                     <button
-                        formAction={login}
+                        formAction={async (formData: FormData) => { await login(formData); }}
                         type="submit"
-                        className="mt-4 bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 rounded-lg shadow-lg hover:shadow-sky-200 transition-all active:scale-[0.98]"
+                        className="mt-4 bg-teal-500 hover:bg-sky-700 text-white font-bold py-3 rounded-lg shadow-lg hover:shadow-sky-200 transition-all active:scale-[0.98]"
                     >
                         Iniciar Sesion
                     </button>
