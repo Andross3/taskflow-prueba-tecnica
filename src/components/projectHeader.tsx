@@ -1,6 +1,6 @@
 'use client'
 import Dialog from "@/components/Dialog";
-import CreateProjectForm from "@/components/CreateProjectoForm";
+import CreateProjectForm from "@/components/CreateProjectForm";
 import { useState } from "react";
 
 const projectHeader = () => {
