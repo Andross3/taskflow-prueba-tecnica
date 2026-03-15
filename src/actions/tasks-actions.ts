@@ -26,7 +26,7 @@ export async function getTasksByProject(projectId: string) {
 }
 
 export async function createTask(formData: FormData) {
-    const tittle = formData.get("tittle")?.toString();
+    const title = formData.get("title")?.toString();
     const description = formData.get("description")?.toString();
     const projectId = formData.get("projectId")!.toString();
     
@@ -36,7 +36,7 @@ export async function createTask(formData: FormData) {
     const isOwner = await verifyProjectOwnership(projectId, user.id);
     if (!isOwner) return null;
 
-    if (!tittle || !description || !projectId ) return null;
+    if (!title || !description || !projectId ) return null;
     
     // verificar que tengan valores validos status y priority
     const priorityValue = formData.get("priority");
@@ -51,7 +51,7 @@ export async function createTask(formData: FormData) {
     const status  = statusValue as Status;
     
     const taskData: CreateTask = {
-        title: tittle,
+        title: title,
         description: description,
         status: status,
         priority: priority,
