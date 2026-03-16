@@ -137,6 +137,11 @@ export async function latestTasksCreated() {
                     userId: user.id
                 }
             },
+            include: {
+                project: {
+                    select: { title: true }
+                }
+            },
             orderBy: {
                 createdAt: 'desc'
             },
