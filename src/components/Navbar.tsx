@@ -10,7 +10,7 @@ export default async function Navbar() {
         <nav className="bg-teal-500 text-white shadow-md">
             <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
                 <Link href="/" className="text-xl font-bold tracking-tight hover:text-teal-100 transition-colors">
-                    MyApp
+                    TaskFlow
                 </Link>
 
                 <div className="flex items-center gap-6 text-sm font-medium">
