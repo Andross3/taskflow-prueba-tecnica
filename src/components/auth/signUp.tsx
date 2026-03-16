@@ -46,7 +46,7 @@ const SignUp = () => {
 
                     <p className="text-sm text-gray-600 mt-2 text-center">
                         ¿Ya tienes una cuenta?{' '}
-                        <Link href="/login" className="text-sky-600 font-semibold hover:underline transition-all">
+                        <Link href="/login" className="text-teal-600 font-semibold hover:underline transition-all">
                             Inicia sesión
                         </Link>
                     </p>
@@ -54,7 +54,7 @@ const SignUp = () => {
                     <button
                         formAction={signup}
                         type="submit"
-                        className="mt-4 bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 rounded-lg shadow-lg hover:shadow-sky-200 transition-all active:scale-[0.98]"
+                        className="mt-4 bg-teal-500 hover:bg-sky-700 text-white font-bold py-3 rounded-lg shadow-lg hover:shadow-sky-200 transition-all active:scale-[0.98]"
                     >
                         Crear Cuenta
                     </button>
