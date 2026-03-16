@@ -57,5 +57,5 @@ model tasks{
   updatedAt DateTime @updatedAt
 
   projectId String
-  project projects @relation(fields: [projectId], references: [id])
+  project projects @relation(fields: [projectId], references: [id], onDelete: Cascade)
 }
